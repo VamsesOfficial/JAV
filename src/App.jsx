@@ -28,7 +28,7 @@ const App = () => {
     setSelectedVideo(null);
     
     try {
-      const response = await fetch(`/api/javsearch?keyword=${encodeURIComponent(searchQuery)}`);
+      const response = await fetch(`https://jav-three.vercel.app/api/javsearch?keyword=${encodeURIComponent(searchQuery)}`);
       const data = await response.json();
       
       if (data.code === 200 && data.results) {
@@ -59,7 +59,7 @@ const App = () => {
     setError('');
     
     try {
-      const response = await fetch(`/api/javdl?url=${encodeURIComponent(video.url)}`);
+      const response = await fetch(`https://jav-three.vercel.app/api/javdl?url=${encodeURIComponent(video.url)}`);
       const data = await response.json();
       
       if (data.code === 200) {
@@ -370,5 +370,6 @@ const App = () => {
     </div>
   );
 };
+
 
 export default App;
